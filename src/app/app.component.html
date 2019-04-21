@@ -1,0 +1,20 @@
+<h3 class="bg-success p-1 text-white text-center">HealthProZone</h3>
+<br/>
+
+<div class="container">
+  <div class="row">
+    <div class="col-3">
+      <button type="button" class="btn btn-primary btn-lg" [routerLink]="['/recordings']">Search Recordings</button>
+    </div>
+    <div class="col-3">
+      <button type="button" class="btn btn-info btn-lg" [routerLink]="['/save-recording']">Save Recording</button>
+    </div>
+   </div>
+</div>
+
+<br/>
+
+<div class="outer-outlet">
+  <router-outlet></router-outlet>
+</div>
+

@@ -1,0 +1,39 @@
+<h3 class="bg-secondary p-1 text-white">Recordings of Patient {{ getPatientName() }} </h3>
+<br/>
+
+<div class="container">
+  <div class="row">
+
+	  	<div class="col-2">
+			<select class="form-control" [(ngModel)]="selectedValue">
+			  <option *ngFor="let p of getPatients()" [ngValue]="p" >{{p.id + ' ' + p.name}}</option>
+			</select>
+	    </div>
+
+	    <div class="col-2">
+		    <button class="btn btn-primary" (click)="searchRecordingsByPatientId()">
+		        Search
+		    </button>
+	    </div>
+
+   </div>
+</div>
+
+<br/>
+
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr><th>Recording index</th>
+            <th>Recording ID</th>
+            <th>Recording type</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let recording of getRecordings(); let i = index">
+            <td>{{ i + 1 }}</td>
+            <td>{{ recording.id }}</td>
+            <td>{{ recording.type }}</td>
+        </tr>
+    </tbody>
+</table>
+
